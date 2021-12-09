@@ -1,0 +1,42 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    background-color: white;
+}
+
+.box{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+.box a img {
+    width: 210px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: -12px -7px 25px -2px black;
+    transition: all .5s;
+     
+}
+
+.box a img:hover {
+    transform: scale(.9) ;
+    opacity: 1; 
+} 
+
+h1 {
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+
+
+

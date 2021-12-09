@@ -1,0 +1,98 @@
+﻿@model IEnumerable<BookStore.Domain.Entities.Book>
+
+@{
+    ViewBag.Title = "Admin: All Books";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+    <div class="navbar navbar-inverse" role="navigation">
+
+        <div class="container-fluid">
+            <div class="navbar-header d-flex col">
+                <a class="navbar-brand" href="#"><i class="fa fa-adjust"></i>Admin<b>Page</b></a>
+            </div>
+
+
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="@Url.Action("List", null, new { area = string.Empty, controller = "Book" },
+                Request.Url.Scheme)">BookStore-Home</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h3>List Of Books</h3>
+        </div>
+    </div>
+
+<div class="panel panel-default" >
+    <div class="panel-heading">
+        <h3>Search Books</h3>
+        <!--  button search  -->
+        <div class="text-right form-group">
+            <form action="Admin" method="post">
+                <input class="form-control"  id="searchValue" name="searchValue" type="text"   placeholder="Search For Books" />
+                <input class="btn btn-info" type="submit" value="Search" />
+            </form>
+            <!-- end button search -->
+        </div>
+    </div> 
+    <div class="panel-body">
+        <table class="table table-hover  table-bordered " >
+            <tr>
+                <th class="text-center text-danger lead">
+                    @Html.DisplayNameFor(model => model.ISBN)
+                </th>
+                <th class="text-center text-danger lead">
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th class="text-center text-danger lead">
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th class="text-center text-danger lead">
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th class="text-center text-danger lead">
+                    @Html.DisplayNameFor(model => model.Specialization)
+                </th>
+                <th class="text-center">Operations</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+        <tr>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.ISBN)
+            </td>
+            <td class="text-left">
+                @Html.ActionLink(item.Title, "Edit", new {item.ISBN })  
+            </td>
+            <td class="text-left">
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td class="text-left">
+                @item.Price.ToString("c")
+            </td>
+            <td class="text-left">
+                @Html.DisplayFor(modelItem => item.Specialization)
+            </td> 
+            <td class="text-center"> 
+                @Html.ActionLink("Delete", "Delete", new {ISBN = item.ISBN }, new { @class="btn btn-danger btn-xs"})
+            </td>
+        </tr>
+            } 
+        </table>
+
+    </div>
+
+    <div class="panel-footer">
+        @Html.ActionLink("Add New Book", "Create", null, new { @class= "btn btn-success btn-lg" })
+    </div>
+</div>
+
+ 

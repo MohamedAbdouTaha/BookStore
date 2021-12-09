@@ -1,0 +1,36 @@
+﻿@model BookStore.Domain.Entities.Book
+    <style>
+        div .well {
+            width:100%
+        }
+    </style>
+
+    
+    <div class=" well hvr-forward" style=" box-shadow: 2px 4px 7px 0px black;">
+            @if (Model.ImageData != null)
+            {
+                <div class=" pull-left" style="margin-right:10px">
+                    <img class="img-rounded" width="100" height="100"
+                         src="@Url.Action("GetImage","Book",new {Model.ISBN })" />
+                </div>
+                <h3><span class="pull-right label label-primary">@Model.Price.ToString("c")</span></h3>
+            }
+
+            <h3>
+                <strong>@Model.Title</strong>
+            </h3>
+            <!--AddToCart => name the form , Cart => class of form data-->
+            @using (Html.BeginForm("AddToCart", "Cart"))
+            {
+                <div class="pull-right">
+                    <!-- يحمل ISBN Book -->
+                    @Html.HiddenFor(b => b.ISBN)
+                    <!-- علشان وانا راجع ارجع علي نفس الصفحه اللي كنت فيها-->
+                    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                    <input type="submit" class="btn btn-success " value="AddToCart" />
+                </div>
+            }
+
+            <div class="lead">@Model.Description</div>
+        
+    </div>

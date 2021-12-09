@@ -1,0 +1,29 @@
+﻿
+@model BookStore.WebUI.Models.BookListViewModel
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 class=" panel text-center text-danger " style="margin-top:60px ; margin-bottom:30px">Book List</h2>
+
+@foreach (var b in Model.Books)
+{
+    @Html.Partial("BookSummary", b)
+}
+
+
+
+<div class="btn-group pull-right">
+
+    @Html.PageLinks(Model.pagingInfo, x => Url.Action("List", "Book", new { pageno = x, specilization = Model.CurrentSpecialization }))
+
+</div>
+
+
+<!--
+    Model Binding >> عباره عن مجموعه object C# >> تعمل علي http Request
+    Interface >>  IModelBinder >> give me any data special HTTP (بيديني اي معلومات خاصه بال session  )
+    وبالتالي هيجيب اي معلومات خاصه بال session لانه قايم علي http
+    Session > Build In >HttpSessionStateBase
+-->

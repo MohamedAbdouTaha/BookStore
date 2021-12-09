@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewBag.Title = "FAQ";
+    Layout = "~/Views/Shared/_LayoutAllPages.cshtml";
+}
+
+<style>
+
+    .breadCrumb-holder {
+        background: #f5f5f5;
+    }
+
+    .breadcrumb {
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    /* page FAQ*/
+
+    .faq {
+        padding: 40px 0;
+    }
+
+        .faq h1 {
+            font-family: 'Raleway';
+            font-weight: 800;
+            letter-spacing: -1px;
+            font-size: 65px;
+        }
+
+            .faq h1 ~ hr {
+                width: 70%;
+            }
+
+    .faq-question {
+        position:relative;
+        left:13%;
+        padding-bottom:60px;
+    }
+
+    .faq-question .panel-heading a .glyphicon-triangle-bottom {
+        float: right;
+    }
+
+    .faq-question .panel-heading {
+        padding: 20px 15px;
+    }
+
+    .col-xs-3 {
+       display:none;
+    }
+
+    .col-xs-8 {
+        width: 100%;
+    }
+
+    .panel-title > a {
+        font-weight: bold;
+    }
+
+    .panel-default > .panel-heading + .panel-collapse .panel-body {
+        border-top-color: #dddddd;
+        font-size: 17px;
+    }
+</style>
+
+<!--  start breadCrumb-->
+<div class="breadCrumb-holder">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="List">Home</a></li>
+            <li class="active">FAQ</li>
+        </ol>
+    </div>
+</div>
+<!--  end breadCrumb-->
+<!-- start section FAQ -->
+<section class="faq text-center">
+    <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <hr>
+        <p class="lead">here you will find all question you are searching for and the full knowledgebase</p>
+    </div>
+</section>
+
+<!-- start section faq accordion -->
+<section class="faq-question col-sm-9">
+    <div class="container">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <!--  start question 1 -->
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading-one">
+                    <h4 class="panel-title">
+                        <a href="#collapse-one" class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse-one">
+                            #01 How To Use Website To Buy Books? <i class="glyphicon glyphicon-triangle-left"></i>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse-one" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-one ">
+                    <div class="panel-body">
+                        Choose Favorite Book and Click on AddToCart and from page cart click on 
+                        CheckOut Now and fill form and click complete ... then Check your Mail Gmail.
+                    </div>
+                </div>
+            </div>
+
+            <!-- start question 2-->
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading-two">
+                    <h4 class="panel-title">
+                        <a href="#collapse-two" class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse-two">
+                            #02 What books New will be added? <i class="glyphicon glyphicon-triangle-bottom"></i>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse-two" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-two ">
+                    <div class="panel-body">
+                        Some of the greatest books in the field of psychology are depression, a program for behavior modification, social psychology, the origins of psychology, deviating from the text, and leaving anxiety and never life ..
+                    </div>
+                </div>
+            </div>
+
+            <!-- start question 3-->
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading-three">
+                    <h4 class="panel-title">
+                        <a href="#collapse-three" class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse-two">
+                            #03 How To Create Your Own Slider? <i class="glyphicon glyphicon-triangle-bottom"></i>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse-three" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-three ">
+                    <div class="panel-body">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde expedita maiores reprehenderit ex architecto nihil facere commodi adipisci molestiae magnam ducimus culpa optio dolore neque aliquid, repudiandae numquam reiciendis corrupti?
+                    </div>
+                </div>
+            </div>
+
+            <!-- start question 4-->
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading-four">
+                    <h4 class="panel-title">
+                        <a href="#collapse-four" class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse-four">
+                            #04 What new sections will be added? <i class="glyphicon glyphicon-triangle-bottom"></i>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse-four" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-four ">
+                    <div class="panel-body">
+
+                        Islamic religion, history, literature, philosophy, psychology, and poetry
+                    </div>
+                </div>
+            </div>
+
+            <!-- start question 5-->
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="heading-five">
+                    <h4 class="panel-title">
+                        <a href="#collapse-five" class="collapsed" data-toggle="collapse" data-parent="#accordion" aria-expanded="true" aria-controls="collapse-five">
+                            #05 Are there free books on the site?  <i class="glyphicon glyphicon-triangle-bottom"></i>
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapse-five" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-five ">
+                    <div class="panel-body">
+                        Yes, Link has free books in various fields of technology
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,143 @@
+﻿
+@{
+    ViewBag.Title = "about";
+    Layout = "~/Views/Shared/_LayoutAllPages.cshtml";
+}
+
+<style>
+    .breadCrumb-holder {
+        background: #f5f5f5;
+        
+    }
+
+    .breadcrumb {
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .about-us {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+        .about-us h1 {
+            font-family: 'Raleway';
+            font-weight: 800;
+            letter-spacing: -2px;
+            font-size: 62px;
+        }
+
+        .about-us hr {
+            width: 70%;
+            background-color: #333;
+        }
+
+
+    /*------------*/
+    .about-feature {
+        padding: 0 0 70px 0
+    }
+
+        .about-feature h3 {
+            font-family: 'Raleway';
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .about-feature p {
+            margin-bottom: 20px;
+        }
+
+
+    /*------------*/
+    .about-ceo {
+        background: #EEE;
+        padding-top: 30px;
+    }
+
+        .about-ceo .lead {
+            line-height: 1.8;
+        }
+
+        .about-ceo h2 {
+            font-family: 'Raleway';
+            font-weight: 800;
+            ;
+        }
+
+        .about-ceo .btn-primary {
+            background-color: #333;
+            border-color: #333;
+        }
+
+    .col-xs-3 {
+        display: none;
+    }
+
+    .col-xs-8 {
+        width: 100%;
+    }
+
+
+</style>
+
+<!--  start breadCrumb-->
+<div class="breadCrumb-holder">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="List">Home</a></li>
+            <li class="active"> About Us</li>
+        </ol>
+    </div>
+</div>
+<!--  end breadCrumb-->
+<!-- first section-->
+<section class="about-us text-center">
+    <div class="container">
+        <h1>About Us</h1>
+        <hr>
+        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi cupiditate ipsa amet recusandae doloribus<br> cumque velit fugit! Magni magnam aut blanditiis molestiae qui vero. Ea modi repudiandae similique molestiae sunt?</p>
+        <img class="img-thumbnail" src="~/images/team1.jpg" alt="Company team">
+    </div>
+</section>
+
+<!--  section about-feature-->
+<section class="about-feature text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <i class="fa fa-code fa-5x"></i>
+                <h3>We Love Code</h3>
+                <p>we create your digidtal dream just think and tell us what you need or leave inspiration to us and just believe in our proffessional.</p>
+            </div>
+
+            <div class="col-sm-4">
+                <i class="fa fa-child fa-5x"></i>
+                <h3>We Are Happy</h3>
+                <p>we create your digidtal dream just think and tell us what you need or leave inspiration to us and just believe in our proffessional.</p>
+            </div>
+
+            <div class="col-sm-4">
+                <i class="fa fa-group  fa-5x"></i>
+                <h3>We Are Social</h3>
+                <p>we create your digidtal dream just think and tell us what you need or leave inspiration to us and just believe in our proffessional.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- strat section CEO => cheive excutive officer -->
+<section class="about-ceo">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <img style="height: 330px; width: 200px;" class="img-responsive center-block" src="~/images/businessman-hd-png-businessman-png-330.png" alt="ceo">
+            </div>
+            <div class="col-sm-7">
+                <h2>We Are Happy To Help You.</h2>
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate omnis consequatur odio? Illo ipsum voluptate eveniet doloremque optio! Cupiditate, dignissimos tempore soluta voluptate animi repellendus architecto beatae facere? Totam, quisquam.</p>
+                <a href="#" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</section>

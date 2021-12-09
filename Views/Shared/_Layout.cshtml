@@ -1,0 +1,544 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/introWebsite/video/icons8-read-16.png" />
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap-theme.css" />
+    <link rel="stylesheet" href="~/Content/main.css" />
+    <link rel="stylesheet" href="~/Content/ErrorStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/Footer-with-button-logo.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/animate.css" />
+    <link rel="stylesheet" href="~/Content/hover.css" />
+    <link href="~/Content/GoTopBtn.css" rel="stylesheet" />
+    <link href="~/Content/pageLoad.css" rel="stylesheet" />
+    <link href="~/Content/loginstyle.css" rel="stylesheet" />
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <style>
+        /* style mobile website */
+        .navbar-right {
+            float: right !important;
+            margin-right: 20px;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body style="overflow-x: hidden;">
+
+
+    <div class="navbar navbar-primary navbar-inverse " role="navigation">
+
+        <div class="container-fluid">
+            <div class="navbar-header d-flex col">
+                <a class="navbar-brand  hvr-buzz" href="@Url.Action("List",null, new { area = string.Empty, controller = "Book" },
+                Request.Url.Scheme)"><i class="fa fa-cube"></i>Book<b style="color:#E41B17">Store</b></a>
+            </div>
+
+        </div>
+
+        <!--
+        <ul class=" nav navbar-nav btn-danger alert-success" style="border-radius:4px">
+
+
+        </ul>
+        <ul class=" nav navbar-nav btn-info alert-info" style="border-radius:4px; margin-left:3px">
+
+
+        </ul>
+        <ul class=" nav navbar-nav btn-info alert-info" style="border-radius:4px; margin-left:3px">
+
+
+        </ul>-->
+
+
+        <div class="collapse navbar-collapse navbar-right" id="bar">
+            <ul class="nav navbar-nav">
+                <li class="active  hvr-bounce-in"><a href="@Url.Action("List","Book")">Home <span class="sr-only"></span></a></li>
+                <li><a href="@Url.Action("about","book")">About</a></li>
+                <li><a href="@Url.Action("faq","book")">FAQ</a></li>
+                <li class=" ">
+                    <a class=" " href="@Url.Action("Login", null, new { area = string.Empty, controller = "Account" },
+                Request.Url.Scheme)">Admin Login</a>
+
+                </li>
+                <li class="">
+                    <a class=" " href="~/introWebsite/cardinfo.html">Card Info</a>
+                </li>
+                <li class="">
+                    @Html.ActionLink("Register", "Register", "Register", null, new { @style = "text-decoration:none" })
+                </li>
+
+            </ul>
+
+
+        </div>
+
+    </div>
+    <span class=""  style="margin-right:15px;">
+        @Html.Action("Summary", "Cart")
+    </span>
+
+    <!-- start section  carousel -->
+    <div id="mySlide" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators hidden-xs">
+            <li data-target="#mySlide" data-slide-to="0" class="active"></li>
+            <li data-target="#mySlide" data-slide-to="1"></li>
+            <li data-target="#mySlide" data-slide-to="2"></li>
+            <li data-target="#mySlide" data-slide-to="3"></li>
+            <li data-target="#mySlide" data-slide-to="4"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="~/images/carousel/book-chapter-six-5834.jpg" alt="image 1">
+                <div class="carousel-caption  hidden-xs">
+                    <h1>FIND YOUR FAVORITE BOOKS HERE</h1>
+                    <p class="lead">From applied literature to educational resources, we have a lot of <br /> textbooks to offer you. We provide only the best books for rent.</p>
+                    <a href="~/openBook/index.html" class="btn btn-success  hvr-wobble-vertical">View Book Free</a>
+                </div>
+            </div>
+            <div class="item">
+                <img src="~/images/carousel/my-secret-plan-to-rule-the-world-book-1765033.jpg" alt="image 2">
+                <div class="carousel-caption  hidden-xs">
+                    <h1>EXCLUSIVE BOOK OFFERS</h1>
+                    <p class="lead">We regularly update our catalog with exclusive book offers from <br /> international authors and publishing houses.</p>
+                    <a href="~/openBook/index.html" class="btn btn-success  hvr-wobble-vertical">View Book Free</a>
+                </div>
+            </div>
+            <div class="item">
+                <img src="~/images/carousel/open-textbook-762687 (1).jpg" alt="image 3">
+                <div class="carousel-caption  hidden-xs">
+                    <h1>RENT NEW AND USED TEXTBOOKS</h1>
+                    <p class="lead">We provide huge discounts on all kinds of textbooks. On our website <br /> you can find lots of books for study and self-development.</p>
+                    <a href="~/openBook/index.html" class="btn btn-success  hvr-wobble-vertical">View Book Free</a>
+                </div>
+            </div>
+            <div class="item">
+                <img src="~/images/carousel/white-ceramic-teacup-with-saucer-near-two-books-above-gray-904616.jpg" alt="image 4">
+                <div class="carousel-caption  hidden-xs">
+                    <h1>FIND YOUR FAVORITE BOOKS HERE</h1>
+                    <p class="lead">From applied literature to educational resources, we have a lot of <br /> textbooks to offer you. We provide only the best books for rent.</p>
+                    <a href="~/openBook/index.html" class="btn btn-success  hvr-wobble-verticalw">View Book Free</a>
+                </div>
+            </div>
+            <div class="item">
+                <img src="~/images/carousel/woman-wearing-brown-shirt-carrying-black-leather-bag-on-1106468.jpg" alt="image 5">
+                <div class="carousel-caption  hidden-xs">
+                    <h1>EXCLUSIVE BOOK OFFERS</h1>
+                    <p class="lead">We regularly update our catalog with exclusive book offers from <br /> international authors and publishing houses.</p>
+                    <a href="~/openBook/index.html" class="btn btn-success hvr-wobble-vertical">View Book Free</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#mySlide" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#mySlide" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!--  end section carousel -->
+
+
+
+
+
+    <div class="container    "> 
+        <div class="row panel ">
+            <div id="specialization" class=" col-xs-3" style="margin-left:10px; ">
+                @Html.Action("Menu", "Nav")
+            </div>
+
+
+            <div class=" col-xs-8">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <!-- section best seller-->
+    <section class="our-skills">
+        <div class="container">
+            <h1 class="text-center">Best Seller</h1>
+            <div class="row">
+                <!-- start progress skill---->
+                <div class="col-md-5">
+                    <div class="skill-progress">
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-success progress-bar-striped active  " role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                Algorithm
+                            </div>
+                        </div>
+
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                C# Asp.net
+                            </div>
+                        </div>
+
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-warning " role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                Javascript Master
+                            </div>
+                        </div>
+
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-info  " role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
+                                Python
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end progress skill---->
+                <!-- start team info --->
+                <div class="col-md-6 col-md-offset-1">
+                    <div class="skills-info hvr-float-shadow">
+                        <h3>About TheBest Seller</h3>
+                        <p class="lead"> we are specialized designed and programming team passionate about web design and creating digital ideas we will transfer your idea to a digital dream and make your wish come true.</p>
+
+                        <p class="lead"><i class="glyphicon glyphicon-ok"> Well Done..</i></p>
+                    </div>
+                </div>
+                <!-- end team info ---->
+            </div>
+        </div>
+    </section>
+    <!-- start section feature-->
+    <section class="feature text-center">
+        <div class="container">
+            <h1>Our Features</h1>
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="feat hvr-sweep-to-right   ">
+                        <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+                        <h4>FREE SHIPPING</h4>
+                        <p>Booker offers free shipping worldwide, which makes it possible for you to rent a book from us even if you live far away from our head office. Shipping process is fast and secure.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="feat hvr-rectangle-in   ">
+                        <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                        <h4>EASY RETURNS</h4>
+                        <p> You can always return a book after you’ve read it. Just use a unique link that can be found inside our every textbook. Then fill out a special form and send the book to one of our offices.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="feat hvr-rectangle-in  ">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                        <h4>TAKE NOTES</h4>
+                        <p>Textbooks rented at Booker have a special section where you can take notes. However, we ask all our customers to limit your writing and highlighting to a minimal amount.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="feat hvr-rectangle-in ">
+                        <span class="glyphicon glyphicon-certificate" aria-hidden="true"></span>
+                        <h4>SATISFACTION GUARANTEED</h4>
+                        <p>We hope that you will like our book rental service. Our team makes every effort to offer you an easy and enjoyable experience of renting a textbook at any time of the year.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--end feature-->
+    <!------- start testimonials-->
+    <div class="testimonials text-center ">
+        <div class="container">
+            <h1>What Our Client Say?</h1>
+            <!------  start carousel testimonials -->
+            <div id="carousel-testimonials" class="carousel slide" data-ride="carousel">
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius assumenda laudantium at labore. Quae dolores consectetur perferendis ullam, iure, sequi harum ut voluptates placeat incidunt consequuntur similique alias repellendus voluptate.</p>
+                        <span>Osama Elzero</span>
+                    </div>
+                    <div class="item">
+                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere inventore aliquam tenetur aliquid explicabo, enim officiis perferendis excepturi animi, hic saepe sit, labore suscipit numquam? Voluptate doloribus aliquam mollitia iusto.</p>
+                        <span>zeiad zohdy</span>
+                    </div>
+                    <div class="item">
+                        <p class="lead"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur assumenda blanditiis nam impedit veniam excepturi, rem odit tempora accusamus sapiente earum tempore quasi culpa sunt quas eius animi nihil sint.</p>
+                        <span>hind ragab</span>
+                    </div>
+                </div>
+                <!-- Indicators -->
+                <ol class="carousel-indicators ">
+                    <li data-target="#carousel-testimonials" data-slide-to="0" class="active">
+                        <img src="~/images/peopleReal1.jpg" alt="tarek">
+                    </li>
+                    <li data-target="#carousel-testimonials" data-slide-to="1">
+                        <img src="~/images/peopleReal3.jpg" alt="omar">
+                    </li>
+                    <li data-target="#carousel-testimonials" data-slide-to="2">
+                        <img src="~/images/peapleRealy2.jpg" alt="hassan">
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!--  start section statistics -->
+    <!-----------start section statistics-->
+    <section class="statistics text-center">
+        <div class="data">
+            <div class="container">
+                <h1>Our Statistics</h1>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stats">
+                            <i class="fa fa-users fa-5x"></i>
+                            <p>80,550</p>
+                            <span>Statisfied Users</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stats">
+                            <i class="fa fa-comments fa-5x"></i>
+                            <p>25,600</p>
+                            <span>Posted Comments</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stats">
+                            <i class="fa fa-suitcase fa-5x"></i>
+                            <p>30,260</p>
+                            <span>Buy Books</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="stats">
+                            <i class="fa fa-support fa-5x fa-spin"></i>
+                            <p>95,350</p>
+                            <span>Users Register</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-------price table -->
+    <section class="price-table text-center">
+        <div class="container">
+            <h1>Our Amazing Prices</h1>
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="price-box wow fadeInDownBig " data-wow-duration="2s" data-wow-offest="">
+                        <h2 class="text-primary">Big Data</h2>
+                        <p class="center-block">$40</p> <span>new</span>
+                        <ul class="list-unstyled">
+                            <li>Auther: maichel</li>  
+                        </ul>
+                        <a href="@Url.Action("Index","Cart")" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="price-box  wow fadeInUpBig" data-wow-duration="2s" data-wow-offest="">
+                        <h2 class="text-danger">Angular</h2>
+                        <p class="center-block">$65</p>  <span>new</span>
+                        <ul class="list-unstyled">
+                            <li>Auther: Tarek</li>
+                        </ul>
+                        <a href="@Url.Action("Index","Cart")" class="btn btn-danger">Order Now</a>
+
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="price-box wow fadeInDownBig" data-wow-duration="2s" data-wow-offest="">
+                        <h2 class="text-success">Flutter</h2>
+                        <p class="center-block">$25</p>  <span>new</span>
+                        <ul class="list-unstyled">
+                            <li>Auther: kareem</li>
+                        </ul>
+                        <a href="@Url.Action("Index","Cart")" class="btn btn-success">Order Now</a>
+
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="price-box wow fadeInUpBig" data-wow-duration="2s" data-wow-offest="">
+                        <h2 class="text-warning">AI</h2>
+                        <p class="center-block" style="margin-left:5px;margin-right:0">$90</p>  <span>new</span>
+                        <ul class="list-unstyled">
+                            <li>Auther: naiel</li>
+                        </ul>
+                        <a href="@Url.Action("Index","Cart")" class="btn btn-warning">Order Now</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Start footer-->
+    <div class="content"style="min-height:0px">
+    </div>
+    <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li>
+                            <a href="@Url.Action("List", null, new { area = string.Empty, controller = "Book" }, Request.Url.Scheme)">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Here we use the Google Embed API to show Google Maps. -->
+            <!-- In order for this to work in your project you will need to generate a unique API key.  -->
+            <iframe id="map-container" frameborder="0" style="border:0;" width="1110" height="340" margin-top 0px;
+                    src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJOwg_06VPwokRYv534QaPC8g&key=AIzaSyCxs0ZxkvvcshVh6msrYfAzvfvOEVdhu48"></iframe>
+        </div>
+
+        <div class="social-networks">
+            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
+            <a href="#" class="LinkedIn"><i class="fa fa-linkedin"></i></a>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2018 Copyright BookStore- All rights reserved mohamed abdou</p>
+
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- End footer-->
+    <!-- Start Back Top -->
+    <div id="back-top">
+        <i class="fa fa-angle-up"></i>
+    </div>
+
+
+    <!-- End Back Top -->
+    <!--Start Page Loading-->
+    <section class="loading-overlay">
+        @*<div class="spinner"></div>*@
+        <div class="sk-cube-grid">
+            <div class="sk-cube sk-cube1"></div>
+            <div class="sk-cube sk-cube2"></div>
+            <div class="sk-cube sk-cube3"></div>
+            <div class="sk-cube sk-cube4"></div>
+            <div class="sk-cube sk-cube5"></div>
+            <div class="sk-cube sk-cube6"></div>
+            <div class="sk-cube sk-cube7"></div>
+            <div class="sk-cube sk-cube8"></div>
+            <div class="sk-cube sk-cube9"></div>
+        </div>
+    </section>
+
+
+    <!--End Page Loading-->
+    <script src="~/Scripts/pageLoad.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/depug.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/GoTopBtn.js"></script>
+    <script src="~/Scripts/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="~/Scripts/jquery.nicescroll.min.js"></script>
+
+</body>
+</html>
+
+
+<!-- this is old -->
+<!--
+  <div class="navbar navbar-inverse" role="navigation">
+      <a class="navbar-brand" href="#">
+          <span class="hidden-xs"> Book Store </span>  !-- style mobile website  --
+  <div class="visible-xs">Book</div>  !-- style mobile website  --
+  <div class="visible-xs">Store</div>  !-- style mobile website  --
+  </a>@*
+  @Html.Action("Summary", "Cart")
+  </div>
+  <div class="visible-xs">
+      !-- style mobile website  --
+      @Html.Action("Menu", "Nav", new { mobileLayout = true });
+  </div>
+  <div class="row panel">
+      <div id="specialization" class="col-xs-3 hidden-xs">
+          @Html.Action("Menu", "Nav")
+      </div>
+      <div class="col-xs-12  col-sm-8">
+          @RenderBody()
+      </div>
+  </div>*@
+  -->

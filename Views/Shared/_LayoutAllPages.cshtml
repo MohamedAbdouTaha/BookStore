@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/introWebsite/video/icons8-read-16.png" />
+    <link rel="stylesheet" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap-theme.css" />
+    <link rel="stylesheet" href="~/Content/main.css" />
+    <link rel="stylesheet" href="~/Content/ErrorStyle.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/Footer-with-button-logo.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/animate.css" />
+    <link rel="stylesheet" href="~/Content/hover.css" />
+    <link href="~/Content/GoTopBtn.css" rel="stylesheet" />
+    <link href="~/Content/pageLoad.css" rel="stylesheet" />
+    <link href="~/Content/loginstyle.css" rel="stylesheet" />
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-primary navbar-inverse " role="navigation">
+
+        <div class="container-fluid">
+            <div class="navbar-header d-flex col">
+                <a class="navbar-brand  hvr-buzz" href="@Url.Action("List",null, new { area = string.Empty, controller = "Book" },
+                Request.Url.Scheme)"><i class="fa fa-cube"></i>Book<b style="color:#E41B17">Store</b></a>
+            </div>
+
+        </div>
+
+        <!--
+        <ul class=" nav navbar-nav btn-danger alert-success" style="border-radius:4px">
+
+
+        </ul>
+        <ul class=" nav navbar-nav btn-info alert-info" style="border-radius:4px; margin-left:3px">
+
+
+        </ul>
+        <ul class=" nav navbar-nav btn-info alert-info" style="border-radius:4px; margin-left:3px">
+
+
+        </ul>-->
+         
+
+        <div class="collapse navbar-collapse navbar-right" id="bar">
+            <ul class="nav navbar-nav">
+                <li class="   hvr-bounce-in"><a href="@Url.Action("List","Book")">Home <span class="sr-only"></span></a></li>
+                <li class="active"><a href="@Url.Action("about","book")">About</a></li>
+                <li class="ui-page-active"><a href="@Url.Action("faq","book")">FAQ</a></li>
+                <li class=" ">
+                    <a class=" " href="@Url.Action("Login", null, new { area = string.Empty, controller = "Account" },
+                Request.Url.Scheme)">Admin Login</a>
+
+                </li>
+                <li class="">
+                    <a class=" " href="~/introWebsite/cardinfo.html">Card Info</a>
+                </li>
+                <li class="">
+                    @Html.ActionLink("Register", "Register", "Register", null, new { @style = "text-decoration:none" })
+                </li>
+
+            </ul> 
+        </div>
+
+    </div>
+    <span class=""  style="margin-right:15px;">
+        @Html.Action("Summary", "Cart")
+    </span>
+
+
+    <div class="row panel">
+        <div id="specialization" class="col-xs-3" style="margin-left:10px; ">
+            @Html.Action("Menu", "Nav")
+        </div>
+
+
+        <div class="col-xs-8">
+            @RenderBody()
+        </div>
+    </div>
+
+
+    <!-- Start footer-->
+    <div class="content" style="min-height:0px">
+    </div>
+    <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li>
+                            <a href="@Url.Action("List", null, new { area = string.Empty, controller = "Book" }, Request.Url.Scheme)">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Here we use the Google Embed API to show Google Maps. -->
+            <!-- In order for this to work in your project you will need to generate a unique API key.  -->
+            <iframe id="map-container" frameborder="0" style="border:0;" width="1110" height="340" margin-top 0px;
+                    src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJOwg_06VPwokRYv534QaPC8g&key=AIzaSyCxs0ZxkvvcshVh6msrYfAzvfvOEVdhu48"></iframe>
+        </div>
+
+        <div class="social-networks">
+            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
+            <a href="#" class="LinkedIn"><i class="fa fa-linkedin"></i></a>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2018 Copyright BookStore- All rights reserved mohamed abdou</p>
+
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- End footer-->
+    <!-- Start Back Top -->
+    <div id="back-top">
+        <i class="fa fa-angle-up"></i>
+    </div>
+
+
+    <!-- End Back Top -->
+    <!--Start Page Loading-->
+    <section class="loading-overlay">
+        @*<div class="spinner"></div>*@
+        <div class="sk-cube-grid">
+            <div class="sk-cube sk-cube1"></div>
+            <div class="sk-cube sk-cube2"></div>
+            <div class="sk-cube sk-cube3"></div>
+            <div class="sk-cube sk-cube4"></div>
+            <div class="sk-cube sk-cube5"></div>
+            <div class="sk-cube sk-cube6"></div>
+            <div class="sk-cube sk-cube7"></div>
+            <div class="sk-cube sk-cube8"></div>
+            <div class="sk-cube sk-cube9"></div>
+        </div>
+    </section>
+
+
+    <!--End Page Loading-->
+    <script src="~/Scripts/pageLoad.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/depug.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/GoTopBtn.js"></script>
+    <script src="~/Scripts/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="~/Scripts/jquery.nicescroll.min.js"></script>
+</body>
+</html>
